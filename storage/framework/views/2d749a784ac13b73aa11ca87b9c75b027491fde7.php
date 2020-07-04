@@ -1,10 +1,8 @@
-@extends('frontpage.homepage.app')
-
-@section('title')
+<?php $__env->startSection('title'); ?>
 Reservation
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
@@ -60,8 +58,8 @@ Reservation
                                             <p>Friday - Saturday: <span>10am - 11pm</span></p>
                                         </div>
 
-                                        <form id="reservationbooking" action="{{ route('reservation_create') }}" method="post">
-                                         @csrf
+                                        <form id="reservationbooking" action="<?php echo e(route('reservation_create')); ?>" method="post">
+                                         <?php echo csrf_field(); ?>
 
 
                                             <div class="form-group lgx-form-full lgx-form-left">
@@ -139,4 +137,6 @@ $('#datetimepicker1').datetimepicker({
 });
 </script>
   </main>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontpage.homepage.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\Laravel Projects\Restaurant mamagement system\Fahim_cafe_-Final\Fahim cafe -Final\RMRS\resources\views/frontpage/reservationpage/index.blade.php ENDPATH**/ ?>
