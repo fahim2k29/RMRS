@@ -103,7 +103,7 @@
 });
 
 
-
+//Auth::routes(['verify'=>true]);
     Route::group(['middleware'=>['auth']],function(){
 
       Route::group(['middleware'=>['customer']],function(){

@@ -1,4 +1,4 @@
-@extends('frontpage.homepage.app')
+@extends('frontpage.homepage.delivery')
 
 @section('content')
 <div class="container">

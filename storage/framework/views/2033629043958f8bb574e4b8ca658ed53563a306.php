@@ -9,7 +9,7 @@
 
     <!-- SITE TITLE -->
     <title>
-      @yield('title')
+      <?php echo $__env->yieldContent('title'); ?>
     </title>
     <style>  <!-- alert -->
     div {
@@ -28,33 +28,33 @@
     </script>
     <!-- BOOTSTRAP CSS -->
 
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/bootstrap/css/bootstrap.min.css') }}" media="all"/>
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/bootstrap/css/bootstrap.min.css')); ?>" media="all"/>
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/fontawesome/css/font-awesome.min.css') }}" media="all"/>
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/fontawesome/css/font-awesome.min.css')); ?>" media="all"/>
 
     <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/maginificpopup/magnific-popup.css') }}" media="all"/>
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/maginificpopup/magnific-popup.css')); ?>" media="all"/>
 
     <!-- OWL CAROUSEL CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/owlcarousel/owl.carousel.min.css') }}" media="all" />
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/owlcarousel/owl.theme.default.min.css') }}" media="all" />
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/owlcarousel/owl.carousel.min.css')); ?>" media="all" />
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/owlcarousel/owl.theme.default.min.css')); ?>" media="all" />
 
     <!-- GOOGLE FONT -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700%7cRaleway:300,400,400i,500,600,700,900"/>
 
 
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/animate/animate.css') }}" media="all" />
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/animate/animate.css')); ?>" media="all" />
 
 
     <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/libs/datepicker/bootstrap-datetimepicker.min.css') }}" media="all"/>
+    <link rel="stylesheet" href="<?php echo e(asset('frontend/assets/libs/datepicker/bootstrap-datetimepicker.min.css')); ?>" media="all"/>
 
     <!-- MASTER  STYLESHEET  -->
-    <link id="lgx-master-style" rel="stylesheet" href="{{ asset('frontend/assets/css/style-red.min.css') }}" media="all"/>
+    <link id="lgx-master-style" rel="stylesheet" href="<?php echo e(asset('frontend/assets/css/style-red.min.css')); ?>" media="all"/>
 
     <!-- MODERNIZER CSS  -->
-    <script src="{{ asset('frontend/assets/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <script src="<?php echo e(asset('frontend/assets/js/vendor/modernizr-2.8.3.min.js')); ?>"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -84,8 +84,8 @@
 
 
                         <div class="lgx-logo"> <!--lgx-logo-default lgx-logo-fixed lgx-logo-white lgx-logo-black-->
-                            <a href="{{ route('homepage') }}" target="_blank" class="lgx-scroll">
-                                <img src="{{ asset('frontend/assets/img/newlogo-awsmcafe.PNG') }}" alt="Restaura Logo"/>
+                            <a href="<?php echo e(route('homepage')); ?>" target="_blank" class="lgx-scroll">
+                                <img src="<?php echo e(asset('frontend/assets/img/newlogo-awsmcafe.PNG')); ?>" alt="Restaura Logo"/>
                             </a>
                         </div>
                     </div>
@@ -93,22 +93,22 @@
                         <ul class="nav navbar-nav lgx-nav">
 
                           
-                            <li><a class="lgx-scroll" href="{{route('menupage')}}"> Menu </a></li>
-                            <li><a class="lgx-scroll" href="{{route('history_menu')}}"> ABOUT </a></li>
-                            <li><a class="lgx-scroll" href="{{route('contact')}}">Contact</a></li>
-                            @if(!empty(Auth::user()->id))
-                            <li><a class="lgx-scroll btn lgx-btn" href="{{ route('reservationpage') }}"><span>Reservation</span></a></li>
-                            <li><a class="lgx-scroll" href="{{route('customer_home')}}">Orders</a></li>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('menupage')); ?>"> Menu </a></li>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('history_menu')); ?>"> ABOUT </a></li>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('contact')); ?>">Contact</a></li>
+                            <?php if(!empty(Auth::user()->id)): ?>
+                            <li><a class="lgx-scroll btn lgx-btn" href="<?php echo e(route('reservationpage')); ?>"><span>Reservation</span></a></li>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('customer_home')); ?>">Orders</a></li>
 
-                            <li><a class="lgx-scroll" href="{{route('cart')}}"><img src="{{  asset('frontend/assets/img/cart-icon-olive.png') }}" alt="Restaura Logo"/>
-                              <span>{{ App\Menucart::where('customer_ip', $_SERVER["REMOTE_ADDR"])->count() }}</span>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('cart')); ?>"><img src="<?php echo e(asset('frontend/assets/img/cart-icon-olive.png')); ?>" alt="Restaura Logo"/>
+                              <span><?php echo e(App\Menucart::where('customer_ip', $_SERVER["REMOTE_ADDR"])->count()); ?></span>
                             </a>
                           </li>
-                            <li><a class="lgx-scroll" href="{{route('logout')}}">Logout</a></li>
-                            @else
-                            <li><a class="lgx-scroll" href="{{route('login')}}">Login</a></li>
-                            <li><a class="lgx-scroll" href="{{route('register')}}">Register</a></li>
-                            @endif
+                            <li><a class="lgx-scroll" href="<?php echo e(route('logout')); ?>">Logout</a></li>
+                            <?php else: ?>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('login')); ?>">Login</a></li>
+                            <li><a class="lgx-scroll" href="<?php echo e(route('register')); ?>">Register</a></li>
+                            <?php endif; ?>
 
 
 
@@ -134,8 +134,8 @@
 </header>
 <!--HEADER END-->
 <main class="py-4">
-    @include('flash-message')
-    @yield('content')
+    <?php echo $__env->make('flash-message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+    <?php echo $__env->yieldContent('content'); ?>
 </main>
 
 <!--FOOTER-->
@@ -145,7 +145,7 @@
             <div class="container">
                 <div class="lgx-footer-area">
                     <div class="lgx-footer-single">
-                        <a class="logo" href="{{ route('homepage') }}"><img src="{{ asset('frontend/assets/img/logo-footer-red.png') }}" alt="Logo"></a>
+                        <a class="logo" href="<?php echo e(route('homepage')); ?>"><img src="<?php echo e(asset('frontend/assets/img/logo-footer-red.png')); ?>" alt="Logo"></a>
                         <address>
                             <i class="fa fa-map-marker"></i>
                             Awesome Cafe  <br>
@@ -173,7 +173,7 @@
                 </div>
                 <div class="lgx-footer-bottom">
                     <div class="lgx-copyright">
-                        <p>© 2019 Restaura is powered by <a href="{{ route('homepage') }}">Awesome Cafe</a> The property of their owners.</p>
+                        <p>© 2019 Restaura is powered by <a href="<?php echo e(route('homepage')); ?>">Awesome Cafe</a> The property of their owners.</p>
                     </div>
 
                 </div>
@@ -191,58 +191,59 @@
 <!--//.LGX SITE CONTAINER-->
 <!-- *** ADD YOUR SITE SCRIPT HERE *** -->
 <!-- JQUERY  -->
-<script src="{{ asset('frontend/assets/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/js/vendor/jquery-1.12.4.min.js')); ?>"></script>
 
 <!-- BOOTSTRAP JS  -->
-<script src="{{ asset('frontend/assets/libs/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/bootstrap/js/bootstrap.min.js')); ?>"></script>
 
 
-<script src="{{ asset('frontend/assets/libs/jquery.smooth-scroll.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/jquery.smooth-scroll.js')); ?>"></script>
 
 <!-- SKILLS SCRIPT  -->
-<script src="{{ asset('frontend/assets/libs/jquery.validate.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/jquery.validate.js')); ?>"></script>
 
 
 <!-- adding magnific popup js library -->
-<script type="text/javascript" src="{{ asset('frontend/assets/libs/maginificpopup/jquery.magnific-popup.min.js') }}"></script>
+<script type="text/javascript" src="<?php echo e(asset('frontend/assets/libs/maginificpopup/jquery.magnific-popup.min.js')); ?>"></script>
 
 <!-- Owl Carousel  -->
-<script src="{{ asset('frontend/assets/libs/owlcarousel/owl.carousel.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/owlcarousel/owl.carousel.min.js')); ?>"></script>
 
 
-<script src="{{ asset('frontend/assets/libs/header-parallax.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/header-parallax.js')); ?>"></script>
 
 
 <!-- bootstrap date picker js with moment js -->
-<script src="{{ asset('frontend/assets/libs/datepicker/moment-with-locales.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/libs/datepicker/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/datepicker/moment-with-locales.min.js')); ?>"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/datepicker/bootstrap-datetimepicker.min.js')); ?>"></script>
 
 <!-- Counter JS -->
-<script src="{{ asset('frontend/assets/libs/waypoints.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/libs/counterup/jquery.counterup.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/waypoints.min.js')); ?>"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/counterup/jquery.counterup.min.js')); ?>"></script>
 
 <!-- MENU FILTER   -->
-<script src="{{ asset('frontend/assets/libs/isotope/isotope.pkgd.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/isotope/isotope.pkgd.min.js')); ?>"></script>
 
 <!-- SMOTH+SCROLL -->
-<script src="{{ asset('frontend/assets/libs/jquery.smooth-scroll.min.js') }}"></script>
-<script src="{{ asset('frontend/assets/libs/jquery.easing.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/jquery.smooth-scroll.min.js')); ?>"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/jquery.easing.min.js')); ?>"></script>
 
 <!-- type js -->
-<script src="{{ asset('frontend/assets/libs/typed/typed.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/typed/typed.min.js')); ?>"></script>
 
 <!-- Sticky Sidebar js -->
-<script src="{{ asset('frontend/assets/libs/stickysidebar/theia-sticky-sidebar.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/stickysidebar/theia-sticky-sidebar.min.js')); ?>"></script>
 
 <!-- instafeed js -->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/instafeed.js/1.4.1/instafeed.min.js"></script>-->
-<script src="{{ asset('frontend/assets/libs/instafeed.min.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/libs/instafeed.min.js')); ?>"></script>
 
 <!-- CUSTOM SCRIPT  -->
-<script src="{{ asset('frontend/assets/js/custom.script.js') }}"></script>
+<script src="<?php echo e(asset('frontend/assets/js/custom.script.js')); ?>"></script>
 
 
 
 </body>
 
 </html>
+<?php /**PATH G:\RMRS\RMRS\resources\views/frontpage/homepage/app.blade.php ENDPATH**/ ?>

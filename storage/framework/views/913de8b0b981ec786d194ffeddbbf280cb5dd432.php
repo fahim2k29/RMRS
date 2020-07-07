@@ -11,17 +11,17 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<!--Bootstrap CSS file -->
-	<link rel="stylesheet" href="{{ asset('newtheme/../../../stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="<?php echo e(asset('newtheme/../../../stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')); ?>">
 
 	<!-- Ideabox main theme css file. you have to add all pages -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('newtheme/css/main-style.css') }}">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('newtheme/css/main-style.css')); ?>">
 
 
 
-	<script src="{{ asset('js/app.js') }}" defer></script>
+	<script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
 
 
-	  <script src="{{ asset('js/jquerysearch.js') }}"></script>
+	  <script src="<?php echo e(asset('js/jquerysearch.js')); ?>"></script>
 
 
 	  <script >
@@ -55,7 +55,7 @@
 	  </script>
 
 
-	<style type="{{ asset('newtheme/text/css') }}">
+	<style type="<?php echo e(asset('newtheme/text/css')); ?>">
 
 		/*Font of your page. you can use any font. like google font or font-face font
 		  Demo page styles here
@@ -84,8 +84,8 @@
 			<!--logo start -->
 			<div class="m-logo-box">
 				<h1>
-					<a href="{{route('dashboard') }}" class="m-logo">
-						<img class="m-logo-desktop" src="{{ asset('frontend/assets/img/newlogo-awsmcafe.PNG') }}" width="160" height="35">
+					<a href="<?php echo e(route('dashboard')); ?>" class="m-logo">
+						<img class="m-logo-desktop" src="<?php echo e(asset('frontend/assets/img/newlogo-awsmcafe.PNG')); ?>" width="160" height="35">
 					</a>
 				</h1>
 			</div>
@@ -101,11 +101,11 @@
 					</li>
 
 					<li>
-						<a href="#" class="m-material-button m-submenu-toggle"><span>{{ Auth::user()->name}}</span></a>
+						<a href="#" class="m-material-button m-submenu-toggle"><span><?php echo e(Auth::user()->name); ?></span></a>
 						<div class="m-header-submenu">
 							<ul>
 
-								<li><a href="{{ route('logout')}}">Logout</a></li>
+								<li><a href="<?php echo e(route('logout')); ?>">Logout</a></li>
 							</ul>
 						</div>
 					</li>
@@ -161,16 +161,16 @@
 
 										<ul>
 										 <li>
-											 <a href="{{ route('dashboard') }}" class="m-material-button"><span class="m-label">User Datatable</span></a>
+											 <a href="<?php echo e(route('dashboard')); ?>" class="m-material-button"><span class="m-label">User Datatable</span></a>
 										 </li>
 										 <li>
-											 <a href="{{ route('role') }}" class="m-material-button"><span class="m-label">Manage Role</span></a>
+											 <a href="<?php echo e(route('role')); ?>" class="m-material-button"><span class="m-label">Manage Role</span></a>
 										 </li>
 									 </ul>
 		            </li>
 
 		            <!-- <li>
-						<a href="{{ route('product') }}" class="m-material-button">
+						<a href="<?php echo e(route('product')); ?>" class="m-material-button">
 							<span class="m-icon"><i class="material-icons">&#xE871;</i></span>
 		                	<span class="m-label"> <b>Manage Menu</b> </span>
 		                	<span class="m-arrow-icon"><i class="material-icons">&#xE313;</i></span>
@@ -178,14 +178,14 @@
 		            </li> -->
 
 		            <li>
-						<a href="{{ route('order_details') }}" class="m-material-button">
+						<a href="<?php echo e(route('order_details')); ?>" class="m-material-button">
 							<span class="m-icon"><i class="material-icons">&#xE89B;</i></span>
 		                	<span class="m-label"> <b>Manage Order</b> </span>
 		                </a>
 		            </li>
 
 		            <li>
-						<a href="{{ route('order') }}" class="m-material-button">
+						<a href="<?php echo e(route('order')); ?>" class="m-material-button">
 							<span class="m-icon"><i class="material-icons">&#xE89B;</i></span>
 		                	<span class="m-label"> <b>Reservation</b> </span>
 		                </a>
@@ -198,17 +198,17 @@
 		                </a>
 		                <ul>
 		                	<li>
-		                		<a href="{{ route('employee') }}" class="m-material-button"><span class="m-label">Employee Datatables</span></a>
+		                		<a href="<?php echo e(route('employee')); ?>" class="m-material-button"><span class="m-label">Employee Datatables</span></a>
 		                	</li>
 		                	<!-- <li>
-		                		<a href="{{ route('e_jobInfo') }}" class="m-material-button"><span class="m-label">Job info</span></a>
+		                		<a href="<?php echo e(route('e_jobInfo')); ?>" class="m-material-button"><span class="m-label">Job info</span></a>
 		                	</li> -->
 
 		                </ul>
 		            </li>
 
 		            <li>
-						<a href="{{ route('query') }}" class="m-material-button">
+						<a href="<?php echo e(route('query')); ?>" class="m-material-button">
 							<span class="m-icon"><i class="material-icons">&#xE0BE;</i></span>
 		                	<span class="m-label"> <b>Query / Feedback</b> </span>
 		                </a>
@@ -251,15 +251,15 @@
 	<div class="m-overlay"></div>
 
 	<!--Jquery Library incluse -->
-	<script src="{{ asset('newtheme/js/jquery-3.3.1.min.js') }}"></script>
+	<script src="<?php echo e(asset('newtheme/js/jquery-3.3.1.min.js')); ?>"></script>
 
 	<!--popper.js include. for Bootstrap -->
-    <script src="{{ asset('newtheme/../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js') }}"></script>
+    <script src="<?php echo e(asset('newtheme/../../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js')); ?>"></script>
 
     <!--Bottostrap include -->
-    <script src="{{ asset('newtheme/../../../stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js') }}"></script>
+    <script src="<?php echo e(asset('newtheme/../../../stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js')); ?>"></script>
 
-			<script src="{{ asset('js/jquerysearch.js') }}"></script>
+			<script src="<?php echo e(asset('js/jquerysearch.js')); ?>"></script>
 
 
 </body>
@@ -267,3 +267,4 @@
 
 <!-- Mirrored from tevratgundogdu.com/works/ideabox-material-menu/index-fixed-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 24 Dec 2019 02:44:52 GMT -->
 </html>
+<?php /**PATH G:\RMRS\RMRS\resources\views/newtheme/app.blade.php ENDPATH**/ ?>

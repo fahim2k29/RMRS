@@ -92,25 +92,13 @@
                     <div id="navbar" class="navbar-collapse collapse lgx-collapse">
                         <ul class="nav navbar-nav lgx-nav">
 
+                          @if(!empty(Auth::user()->id))
                           
-                            <li><a class="lgx-scroll" href="{{route('menupage')}}"> Menu </a></li>
-                            <li><a class="lgx-scroll" href="{{route('history_menu')}}"> ABOUT </a></li>
-                            <li><a class="lgx-scroll" href="{{route('contact')}}">Contact</a></li>
-                            @if(!empty(Auth::user()->id))
-                            <li><a class="lgx-scroll btn lgx-btn" href="{{ route('reservationpage') }}"><span>Reservation</span></a></li>
-                            <li><a class="lgx-scroll" href="{{route('customer_home')}}">Orders</a></li>
-
-                            <li><a class="lgx-scroll" href="{{route('cart')}}"><img src="{{  asset('frontend/assets/img/cart-icon-olive.png') }}" alt="Restaura Logo"/>
-                              <span>{{ App\Menucart::where('customer_ip', $_SERVER["REMOTE_ADDR"])->count() }}</span>
-                            </a>
-                          </li>
-                            <li><a class="lgx-scroll" href="{{route('logout')}}">Logout</a></li>
-                            @else
-                            <li><a class="lgx-scroll" href="{{route('login')}}">Login</a></li>
-                            <li><a class="lgx-scroll" href="{{route('register')}}">Register</a></li>
-                            @endif
-
-
+                          <li><a class="lgx-scroll" href="{{route('logout')}}">Logout</a></li>
+                          @else
+                          <li><a class="lgx-scroll" href="{{route('login')}}">Login</a></li>
+                          <li><a class="lgx-scroll" href="{{route('register')}}">Register</a></li>
+                          @endif
 
 
 

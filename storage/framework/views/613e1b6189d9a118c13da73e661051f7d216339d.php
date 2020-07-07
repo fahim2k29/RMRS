@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,minimal-ui">
     <title>
-      @yield('title')
+      <?php echo $__env->yieldContent('title'); ?>
     </title>
     <meta content="Admin Dashboard" name="description">
     <meta content="Themesbrand" name="author">
 
     <!--Chartist Chart CSS -->
-    <link rel="stylesheet" href="{{ asset('backend/plugins/chartist/css/chartist.min.css') }}">
-    <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(asset('backend/plugins/chartist/css/chartist.min.css')); ?>">
+    <link href="<?php echo e(asset('backend/assets/css/bootstrap.min.css')); ?>" rel="stylesheet" type="text/css">
 
-    <link href="{{ asset('backend/assets/css/style.css') }}" rel="stylesheet" type="text/css">
+    <link href="<?php echo e(asset('backend/assets/css/style.css')); ?>" rel="stylesheet" type="text/css">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
 
-    <script src="{{ asset('js/jquerysearch.js') }}"></script>
+    <script src="<?php echo e(asset('js/jquerysearch.js')); ?>"></script>
 
 
 	  <script >
@@ -99,7 +99,7 @@
             <div class="topbar-left">
               <a href="#" class="logo">
                 <span>
-                  <img src="{{ asset('frontend/assets/img/newlogo-awsmcafe.PNG') }}" alt="" height="50">
+                  <img src="<?php echo e(asset('frontend/assets/img/newlogo-awsmcafe.PNG')); ?>" alt="" height="50">
                 </span>
               </a>
             </div>
@@ -119,10 +119,10 @@
 
                   <li class="dropdown notification-list list-inline-item">
                       <div class="dropdown notification-list nav-pro-img">
-                          <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">{{ Auth::user()->name}}</a>
+                          <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"><?php echo e(Auth::user()->name); ?></a>
                           <div class="dropdown-menu dropdown-menu-right profile-dropdown">
 
-                              <a class="dropdown-item text-danger" href="{{ route('logout')}}"><i class="mdi mdi-power text-danger"></i> Logout</a></div>
+                              <a class="dropdown-item text-danger" href="<?php echo e(route('logout')); ?>"><i class="mdi mdi-power text-danger"></i> Logout</a></div>
                       </div>
                   </li>
               </ul>
@@ -151,9 +151,9 @@
 
                           <li class="menu-title"><h5>Menu Panel</h5></li>
 
-                        <li><a href="{{ route('category') }}" class="waves-effect text-light"><span class="badge badge-primary badge-pill float-right"></span> <span> Category </span></a></li>
-                        <li><a href="{{ route('food_type') }}" class="waves-effect text-light"><span class="badge badge-primary badge-pill float-right"></span> <span> Food Time </span></a></li>
-                        <li> <a href="{{ route('product') }}" class="waves-effect text-light"><span class="badge badge-primary badge-pill float-right"></span> <span> Food List</span></a> </li>
+                        <li><a href="<?php echo e(route('category')); ?>" class="waves-effect text-light"><span class="badge badge-primary badge-pill float-right"></span> <span> Category </span></a></li>
+                        <li><a href="<?php echo e(route('food_type')); ?>" class="waves-effect text-light"><span class="badge badge-primary badge-pill float-right"></span> <span> Food Time </span></a></li>
+                        <li> <a href="<?php echo e(route('product')); ?>" class="waves-effect text-light"><span class="badge badge-primary badge-pill float-right"></span> <span> Food List</span></a> </li>
 
 
                     </ul>
@@ -165,16 +165,17 @@
         </div>
         <!-- Left Sidebar End -->
 
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
 
         <!-- content -->
         <footer class="footer">© 2019 Awesome cafe.</footer>
     </div>
 
-<script src="{{ asset('backend/assets/js/app.js') }}"></script>
+<script src="<?php echo e(asset('backend/assets/js/app.js')); ?>"></script>
 
 
 
 </body>
 
 </html>
+<?php /**PATH G:\RMRS\RMRS\resources\views/product/app.blade.php ENDPATH**/ ?>

@@ -11,6 +11,9 @@ use App\Product;
 
 class CustomerController extends Controller
 {
+
+
+
   function index()
   {
     $orders = Order::where('user_id', Auth::id())->get();

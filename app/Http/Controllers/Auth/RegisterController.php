@@ -30,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
     protected function redirectTo()
    {
      $id = Auth::id();
@@ -38,7 +38,7 @@ class RegisterController extends Controller
        'role_id' => '3',
        'user_id' => $id,
      ]);
-       return '/';
+       return '/home';
    }
 
     /**
