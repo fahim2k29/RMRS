@@ -1,10 +1,8 @@
-@extends('frontpage.homepage.app')
-
-@section('title')
+<?php $__env->startSection('title'); ?>
   Awesome Cafe
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
@@ -15,19 +13,19 @@
             <div id="layer-wrapper" class="lgx-item-parallax-banner">
 
                 <div id="object1" class="bglayer1 hidden-sm hidden-xs">
-                    <img src="{{asset('frontend/assets/img/parallax/3.png') }}" alt="">
+                    <img src="<?php echo e(asset('frontend/assets/img/parallax/3.png')); ?>" alt="">
                 </div>
                 <div id="object5" class="rightlayer1 hidden-sm hidden-xs">
-                    <img src="{{asset('frontend/assets/img/parallax/4.png') }}" alt="">
+                    <img src="<?php echo e(asset('frontend/assets/img/parallax/4.png')); ?>" alt="">
                 </div>
                 <div id="object2" class="bglayer2 hidden-sm hidden-xs">
-                    <img src="{{asset('frontend/assets/img/parallax/5.png') }}" alt="">
+                    <img src="<?php echo e(asset('frontend/assets/img/parallax/5.png')); ?>" alt="">
                 </div>
                 <div id="object6" class="rightlayer2shade hidden-sm hidden-xs">
-                    <img src="{{asset('frontend/assets/img/parallax/7.png') }}" alt="">
+                    <img src="<?php echo e(asset('frontend/assets/img/parallax/7.png')); ?>" alt="">
                 </div>
                 <div id="object7" class="rightlayer2 hidden-sm hidden-xs">
-                    <img src="{{asset('frontend/assets/img/parallax/6.png') }}" alt="">
+                    <img src="<?php echo e(asset('frontend/assets/img/parallax/6.png')); ?>" alt="">
                 </div>
 
                 <div class="banner-content">
@@ -40,7 +38,7 @@
                                     Experience a taste of Italy while visiting Dhaka. We serve pastas, wood-fired pizzas,
                                     traditional antipasti and more.
                                 <div class="btn-area">
-                                    <a class="lgx-scroll btn lgx-btn" href="{{ route('reservationpage') }}"><span>Reservation</span></a>
+                                    <a class="lgx-scroll btn lgx-btn" href="<?php echo e(route('reservationpage')); ?>"><span>Reservation</span></a>
                                 </div>
                             </div>
                         </div>
@@ -75,21 +73,21 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="about-top-single">
-                            <a href="#"><img src="{{asset('frontend/assets/img/about-icon2.png') }}" alt="about-icon"></a>
+                            <a href="#"><img src="<?php echo e(asset('frontend/assets/img/about-icon2.png')); ?>" alt="about-icon"></a>
                             <h3 class="title"><a href="#">Delicious food</a></h3>
                             <p>Beetroot water spinach okra water chestnut ricebean pea.</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="about-top-single">
-                            <a href="#"><img src="{{asset('frontend/assets/img/about-icon4.png') }}" alt="about-icon"></a>
+                            <a href="#"><img src="<?php echo e(asset('frontend/assets/img/about-icon4.png')); ?>" alt="about-icon"></a>
                             <h3 class="title"><a href="#">Professional Service</a></h3>
                             <p>Beetroot water spinach okra water chestnut ricebean pea.</p>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="about-top-single">
-                            <a href="#"><img src="{{asset('frontend/assets/img/about-icon6.png') }}" alt="about-icon"></a>
+                            <a href="#"><img src="<?php echo e(asset('frontend/assets/img/about-icon6.png')); ?>" alt="about-icon"></a>
                             <h3 class="title"><a href="#">Excelient Menu</a></h3>
                             <p>Beetroot water spinach okra water chestnut ricebean pea.</p>
                         </div>
@@ -127,9 +125,9 @@
                     <div class="lgx-filter-area">
                         <ul id="lgx-filter" class="lgx-filter list-inline">
                             <li ><a class="lgx-filter-item" href="javascript:void(0)" data-filter="*">All Items<span>Fresh & Delicious</span></a></li>
-                            <li><a <?php $id = 1; ?>  href="{{route('menu_sort', $id )}}" > Break-fast <span>Fresh & Delicious</span></a></li>
-                            <li><a <?php $id = 2; ?>  href="{{route('menu_sort', $id )}}" > Lunch <span>Fresh & Delicious</span></a></li>
-                            <li><a <?php $id = 3; ?>  href="{{route('menu_sort', $id )}}" > Dinner <span>Fresh & Delicious</span></a></li>
+                            <li><a <?php $id = 1; ?>  href="<?php echo e(route('menu_sort', $id )); ?>" > Break-fast <span>Fresh & Delicious</span></a></li>
+                            <li><a <?php $id = 2; ?>  href="<?php echo e(route('menu_sort', $id )); ?>" > Lunch <span>Fresh & Delicious</span></a></li>
+                            <li><a <?php $id = 3; ?>  href="<?php echo e(route('menu_sort', $id )); ?>" > Dinner <span>Fresh & Delicious</span></a></li>
                         </ul>
                     </div>
 
@@ -137,35 +135,36 @@
 
                         <div id="lgx-grid-wrapper" class="lgx-grid-wrapper lgx-grid-wrapper-gap" > <!--lgx-grid-wrapper-gap-->
 
-                          @foreach($products as $product)
+                          <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <div class="lgx-grid-item breakfast"> <!-- lgx-grid-item-col1 lgx-grid-item-col2 lgx-grid-item-col3 lgx-grid-item-col4-->
                                 <div class="lgx-single-menu-another">
-                                  @if($product ->status==1)
-                                    <a href="{{ url('/menucart/') }}/{{ $product->id }}">
+                                  <?php if($product ->status==1): ?>
+                                    <a href="<?php echo e(url('/menucart/')); ?>/<?php echo e($product->id); ?>">
                                                 <figure>
-                                                <img src="{{ asset('Image/product_photo') }}/{{$product->product_image}}" class="rounded" alt="{{ $product->product_image  }}" >
+                                                <img src="<?php echo e(asset('Image/product_photo')); ?>/<?php echo e($product->product_image); ?>" class="rounded" alt="<?php echo e($product->product_image); ?>" >
                                                     <figcaption>
                                                     </figcaption>
                                                 </figure>
                                                 <div class="menu-info">
                                                     <div class="info-left" >
-                                                        <h3 class="title"> {{$product->name}} </h3>
-                                                        <p class="text" >   {{$product->description}} </p>
+                                                        <h3 class="title"> <?php echo e($product->name); ?> </h3>
+                                                        <p class="text" >   <?php echo e($product->description); ?> </p>
                                                     </div>
                                                     <div class="menu-price">
-                                                        <span>৳</span>{{$product->price}}
+                                                        <span>৳</span><?php echo e($product->price); ?>
+
                                                     </div>
 
                                                     <!-- <button type="button" name="button">AddToCart</button> -->
                                                 </div>
                                     </a>
-                                    @endif
+                                    <?php endif; ?>
                                 </div>
                             </div><!--//ITEM-->
 
 
 
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 
 
@@ -208,8 +207,8 @@
                                           <p>Friday - Saturday: <span>10am - 11pm</span></p>
                                       </div>
 
-                                      <form id="reservationbooking" action="{{ route('reservation_create') }}" method="post">
-                                       @csrf
+                                      <form id="reservationbooking" action="<?php echo e(route('reservation_create')); ?>" method="post">
+                                       <?php echo csrf_field(); ?>
 
 
                                           <div class="form-group lgx-form-full lgx-form-left">
@@ -332,4 +331,6 @@ format:'DD/MM/YYYY HH:mm'
 $('#datetimepicker1').datetimepicker({maxDateNow: true, format:'DD/MM/YYYY HH:mm'});
 });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('frontpage.homepage.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH G:\Fahim\RMRS\resources\views/frontpage/homepage/index.blade.php ENDPATH**/ ?>

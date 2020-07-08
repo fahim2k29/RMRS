@@ -131,7 +131,7 @@ Reservation
   <!--RESERVATION END-->
     <script>
 $('#datetimepicker1').datetimepicker({
-  minDate: moment("07/07/2020"),
+  minDate: moment("07/08/2020"),
   maxDate: moment("12/08/2020"),
   format:'DD/MM/YYYY HH:mm'
 }).on('dp.show', function(){

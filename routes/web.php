@@ -118,7 +118,6 @@
         Route::post('/review/create', 'ReviewpageController@create')->name('review_create');
         //Contactpage0000000000000000
 
-
         //Cart------------>>>
         //MenuCart
         Route::get('/cart', 'MenucartController@cart')->name('cart');
